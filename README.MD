@@ -32,6 +32,13 @@ superplate is a Next.js all-in-one project generator. Create your project with t
 To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
 
 
+### **Chakra UI**
+
+Chakra UI is a simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
+
+[Go To Documentation](https://chakra-ui.com/docs/getting-started)
+
+
 ### **CSS / styled-jsx**
 
 CRA comes with built-in support for CSS and CSS Modules.
