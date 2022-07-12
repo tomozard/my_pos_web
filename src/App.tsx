@@ -5,6 +5,8 @@ import { Provider } from "react-redux";
 import store from "redux/store";
 import "./i18n";
 
+import '@fontsource/sarabun/400.css'
+
 // import Login from "pages/login";
 import { Routes, Route } from "react-router-dom";
 import Home from "pages";
@@ -29,10 +31,11 @@ function App(): JSX.Element {
       <Provider store={store}>
         <div className="App">
           {/* <header className="App-header">{showDisplayName()}</header> */}
-          <Routes>
-            {/* <Route path="/login" element={<Login />} /> */}
-            <Route path="/" element={<Home />} />
-          </Routes>
+          {/* <Routes> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* </Routes> */}
+          <Home />
         </div>
       </Provider>
     </ChakraProvider>

@@ -17,6 +17,10 @@ const overrides = {
   ...styles,
   colors,
   fontSizes,
+  fonts: {
+    heading: `'sarabun', sans-serif`,
+    body: `'sarabun', sans-serif`,
+  },
 };
 
 const theme = extendTheme(overrides);
