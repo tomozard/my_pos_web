@@ -8,7 +8,7 @@ const Login: React.FC = () => {
     <Flex direction="column">
       <Center minH="100vh">
         <RouteLink to="/">
-          <Button>Login</Button>
+          <Button>Login Test</Button>
         </RouteLink>
       </Center>
     </Flex>
