@@ -31,7 +31,7 @@ function App(): JSX.Element {
 
     if (!isLoggedIn) {
       return (
-        <Button className="App-button" onClick={() => liff.login}>
+        <Button className="App-button" onClick={() => liff.login()}>
           Login
         </Button>
       );

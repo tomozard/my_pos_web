@@ -5,12 +5,17 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
 import * as ReactDOM from "react-dom/client";
+import { LiffProvider } from "react-liff";
 const root = ReactDOM.createRoot(document.getElementById("root")!);
+
+const liffId = "1657277483-8myGPOr0";
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <LiffProvider liffId={liffId}>
+        <App />
+      </LiffProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
