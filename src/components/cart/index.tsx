@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { ListItem } from "./list_item";
 import { IoBagCheckOutline } from "react-icons/io5";
+import { Customer } from "./customer";
 
 export const Cart: React.FC = () => {
   return (
@@ -21,24 +22,7 @@ export const Cart: React.FC = () => {
       //   padding={4}
     >
       <VStack spacing={4} align="stretch" height={"100vh"} padding={4}>
-        <Box rounded="xl" bg="white" padding={4} height={"88px"}>
-          <HStack spacing="4">
-            <Box flex="1">
-              <AspectRatio maxW="64px" ratio={1}>
-                <Image
-                  src="https://bit.ly/dan-abramov"
-                  alt="Dan Abramov"
-                  borderRadius="xl"
-                />
-              </AspectRatio>
-            </Box>
-            <Box flex="4">
-              <Text color={"blackAlpha.700"} fontWeight="bold">
-                Dan Abramov
-              </Text>
-            </Box>
-          </HStack>
-        </Box>
+        <Customer />
         <Text
           color={"blackAlpha.700"}
           fontWeight="bold"
