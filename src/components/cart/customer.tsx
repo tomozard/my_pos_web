@@ -21,13 +21,16 @@ export const Customer: React.FC = () => {
   const { error, isLoggedIn, isReady, liff } = useLiff();
 
   useEffect(() => {
-    // if (!isLoggedIn) return;
-
-    (async () => {
-      const profile = await liff.getProfile();
-      setDisplayName(profile.displayName);
-      setPictureUrl(profile.pictureUrl);
-    })();
+    if (!isLoggedIn) {
+        setDisplayName("Guest");
+        setPictureUrl("");
+    } else {
+      (async () => {
+        const profile = await liff.getProfile();
+        setDisplayName(profile.displayName);
+        setPictureUrl(profile.pictureUrl);
+      })();
+    }
   }, [liff, isLoggedIn]);
 
   return (
@@ -56,7 +59,7 @@ export const Customer: React.FC = () => {
           {isLoggedIn ? (
             <Button
               colorScheme="red"
-              variant="ghost"
+              variant="link"
               height={"auto"}
               padding={0}
               onClick={() => liff.logout()}
@@ -79,7 +82,7 @@ export const Customer: React.FC = () => {
           ) : (
             <Button
               colorScheme="red"
-              variant="ghost"
+              variant="link"
               height={"auto"}
               padding={0}
               onClick={() => liff.login()}
