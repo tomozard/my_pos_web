@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLiff } from "react-liff";
 import {
   Box,
   Image,
@@ -9,9 +10,26 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { AiFillShop, AiOutlineHistory } from "react-icons/ai";
-import { MdLogout } from "react-icons/md";
+import { MdLogin, MdLogout } from "react-icons/md";
 
 export const Nav: React.FC = () => {
+  // const [displayName, setDisplayName] = useState("Guest");
+  // const [pictureUrl, setPictureUrl] = useState("");
+
+  const { isLoggedIn, liff } = useLiff();
+
+  // useEffect(() => {
+  //   if (!isLoggedIn) {
+  //     setDisplayName("Guest");
+  //     setPictureUrl("");
+  //   } else {
+  //     (async () => {
+  //       const profile = await liff.getProfile();
+  //       setDisplayName(profile.displayName);
+  //       setPictureUrl(profile.pictureUrl);
+  //     })();
+  //   }
+  // }, [liff, isLoggedIn]);
   return (
     <VStack spacing={4} align="stretch" height={"100vh"} padding={4}>
       <Box>
@@ -54,22 +72,53 @@ export const Nav: React.FC = () => {
         </VStack>
       </Button>
       <Spacer />
-      <Button colorScheme="red" variant="ghost" height={"auto"} padding={2}>
-        <VStack align="stretch">
-          <Box>
-            <Center>
-              <MdLogout />
-            </Center>
-          </Box>
-          <Box>
-            <Center>
-              <Text marginBottom={0} fontSize={14}>
-                Logout
-              </Text>
-            </Center>
-          </Box>
-        </VStack>
-      </Button>
+      {isLoggedIn ? (
+        <Button
+          colorScheme="red"
+          variant="ghost"
+          height={"auto"}
+          padding={0}
+          onClick={() => liff.logout()}
+        >
+          <VStack align="stretch">
+            <Box>
+              <Center>
+                <MdLogout />
+              </Center>
+            </Box>
+            <Box>
+              <Center>
+                <Text marginBottom={0} fontSize={14}>
+                  Logout
+                </Text>
+              </Center>
+            </Box>
+          </VStack>
+        </Button>
+      ) : (
+        <Button
+          colorScheme="red"
+          variant="ghost"
+          height={"auto"}
+          padding={0}
+          onClick={() => liff.login()}
+        >
+          <VStack align="stretch">
+            <Box>
+              <Center>
+                <MdLogin />
+              </Center>
+            </Box>
+            <Box>
+              <Center>
+                <Text marginBottom={0} fontSize={14}>
+                  Login
+                </Text>
+              </Center>
+            </Box>
+          </VStack>
+        </Button>
+      )}
     </VStack>
   );
 };

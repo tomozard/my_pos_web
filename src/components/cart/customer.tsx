@@ -6,13 +6,12 @@ import {
   Center,
   Divider,
   HStack,
-  Image,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { MdLogin, MdLogout } from "react-icons/md";
 import { useLiff } from "react-liff";
+import { MdLogin, MdLogout } from "react-icons/md";
 
 export const Customer: React.FC = () => {
   const [displayName, setDisplayName] = useState("Guest");
