@@ -7,7 +7,6 @@ import {
   HStack,
   VStack,
   Button,
-  Spacer,
 } from "@chakra-ui/react";
 import { ListItem } from "./list_item";
 import { IoBagCheckOutline } from "react-icons/io5";
@@ -15,14 +14,14 @@ import { IoBagCheckOutline } from "react-icons/io5";
 export const Cart: React.FC = () => {
   return (
     <Box
-      maxWidth={"22.5rem"}
+      maxWidth={"20rem"}
       width={"100%"}
       bg="white"
       bgGradient="linear(red.100 0%, white 25%)"
       //   padding={4}
     >
       <VStack spacing={4} align="stretch" height={"100vh"} padding={4}>
-        <Box boxShadow="md" rounded="xl" bg="white" padding={4} height={"88px"}>
+        <Box rounded="xl" bg="white" padding={4} height={"88px"}>
           <HStack spacing="4">
             <Box flex="1">
               <AspectRatio maxW="64px" ratio={1}>

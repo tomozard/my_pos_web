@@ -20,6 +20,7 @@ const overrides = {
   fonts: {
     heading: `'sarabun', sans-serif`,
     body: `'sarabun', sans-serif`,
+
   },
 };
 
