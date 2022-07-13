@@ -24,7 +24,7 @@ export const ProductItem: React.FC = () => {
     >
       <Image src={property.imageUrl} alt={property.imageAlt} />
 
-      <Box p="4">
+      <Box px="4"  py="2">
         <Flex mt="1">
           <Box flex={1}>
             <Box
@@ -39,7 +39,7 @@ export const ProductItem: React.FC = () => {
             <Box color="gray.600">{property.formattedPrice}</Box>
           </Box>
           <Button
-            leftIcon={<MdOutlineShoppingCart />}
+            // leftIcon={<MdOutlineShoppingCart />}
             colorScheme="red"
             variant="solid"
           >
