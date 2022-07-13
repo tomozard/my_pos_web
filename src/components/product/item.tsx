@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Image, Button, Flex } from "@chakra-ui/react";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 export const ProductItem: React.FC = () => {
   const property = {
@@ -24,21 +25,24 @@ export const ProductItem: React.FC = () => {
       <Image src={property.imageUrl} alt={property.imageAlt} />
 
       <Box p="4">
-        <Box
-          mt="1"
-          fontWeight="semibold"
-          as="h4"
-          lineHeight="tight"
-          noOfLines={1}
-          color="gray.600"
-        >
-          {property.title}
-        </Box>
-        <Flex>
-          <Box flex={1} color="gray.600">
-            {property.formattedPrice}
+        <Flex mt="1">
+          <Box flex={1}>
+            <Box
+              fontWeight="semibold"
+              as="h4"
+              lineHeight="tight"
+              noOfLines={1}
+              color="gray.600"
+            >
+              {property.title}
+            </Box>
+            <Box color="gray.600">{property.formattedPrice}</Box>
           </Box>
-          <Button colorScheme="red" size="sm">
+          <Button
+            leftIcon={<MdOutlineShoppingCart />}
+            colorScheme="red"
+            variant="solid"
+          >
             Add
           </Button>
         </Flex>

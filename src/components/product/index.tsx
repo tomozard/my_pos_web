@@ -5,7 +5,6 @@ import { ProductItem } from "./item";
 export const Product: React.FC = () => {
   return (
     <Box
-      padding={4}
       overflow="auto"
       __css={{
         "&::-webkit-scrollbar": {

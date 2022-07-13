@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  Flex,
-  Box,
-} from "@chakra-ui/react";
+import { Flex, Box, VStack, Divider } from "@chakra-ui/react";
 
 import { useLiff } from "react-liff";
 import { Cart } from "components/cart";
 import { Nav } from "components/nav";
 import { Product } from "components/product";
+import { Category } from "components/category";
 
 const Home: React.FC = () => {
   const [displayName, setDisplayName] = useState("");
@@ -35,7 +33,11 @@ const Home: React.FC = () => {
               <Nav />
             </Box>
             <Box flex="1">
-              <Product />
+              <VStack spacing={4} align="stretch" height={"100vh"} padding={4}>
+                <Category />
+                {/* <Divider borderColor={"blackAlpha.600"} /> */}
+                <Product />
+              </VStack>
             </Box>
             <Cart />
           </Flex>
