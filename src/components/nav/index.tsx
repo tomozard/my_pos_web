@@ -77,7 +77,7 @@ export const Nav: React.FC = () => {
           colorScheme="red"
           variant="ghost"
           height={"auto"}
-          padding={0}
+          padding={2}
           onClick={() => liff.logout()}
         >
           <VStack align="stretch">
@@ -100,7 +100,7 @@ export const Nav: React.FC = () => {
           colorScheme="red"
           variant="ghost"
           height={"auto"}
-          padding={0}
+          padding={2}
           onClick={() => liff.login()}
         >
           <VStack align="stretch">
