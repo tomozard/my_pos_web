@@ -21,13 +21,28 @@ export const Customer: React.FC = () => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-        setDisplayName("Guest");
-        setPictureUrl("");
+      setDisplayName("Guest");
+      setPictureUrl("");
     } else {
       (async () => {
-        const profile = await liff.getProfile();
-        setDisplayName(profile.displayName);
-        setPictureUrl(profile.pictureUrl);
+        liff.getProfile().then((profile) => {
+          liff
+            .sendMessages([
+              {
+                type: "text",
+                text: "ยินดีต้อนรับ คุณ" + profile.displayName,
+              },
+            ])
+            .then(function () {
+              // liff.closeWindow();
+              console.log("send message success")
+            })
+            .catch(function (error) {
+              window.alert("Error sending message: " + error.message);
+            });
+          setDisplayName(profile.displayName);
+          setPictureUrl(profile.pictureUrl);
+        });
       })();
     }
   }, [liff, isLoggedIn]);

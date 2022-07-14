@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Flex, Box, VStack, Divider } from "@chakra-ui/react";
+import { Flex, Box, VStack, useDisclosure } from "@chakra-ui/react";
 
 import { useLiff } from "react-liff";
 import { Cart } from "components/cart";
 import { Nav } from "components/nav";
 import { Product } from "components/product";
 import { Category } from "components/category";
+import Payment from "components/modal/payment";
 
 const Home: React.FC = () => {
   const [displayName, setDisplayName] = useState("");
   const { error, isLoggedIn, isReady, liff } = useLiff();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const showDisplayName = () => {
     if (error) return <p>Something is wrong.</p>;
     if (!isReady) return <p>Loading...</p>;
@@ -42,6 +44,7 @@ const Home: React.FC = () => {
             <Cart />
           </Flex>
         </Flex>
+        <Payment isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
       </>
     );
   };
